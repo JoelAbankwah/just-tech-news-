@@ -2,6 +2,14 @@ const User = require('./User');
 const Post = require('./Post');
 const Vote = require('./Vote');
 
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+})
+
+Post.belongsTo(User, {
+    foreignKey: "user_id"
+})
+
 Vote.belongsTo(User, {
     foreignKey: 'user_id'
 });
